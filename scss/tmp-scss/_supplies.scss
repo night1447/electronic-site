@@ -1,0 +1,185 @@
+.supplies {
+  object-fit: cover;
+  width: 100%;
+  height: 657px;
+  background: url("../images/background-supplies.svg") 9vw center no-repeat, linear-gradient(224.82deg, #030B41 0.85%, #000B52 57.3%, #1900AE 102.14%), #000C52;
+  padding-bottom: 40px;
+
+  & .container {
+    padding: 0;
+  }
+
+  &__wrapper {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    border-left: 1px solid red;
+
+    justify-content: center;
+    //background: url("../images/background-supplies.svg") -180px -125px no-repeat;
+    @include adpt($desm-r) {
+      flex-direction: column;
+      background-position: left center;
+    }
+    @include adpt($mtab-r) {
+      flex-direction: column;
+      background-position: -170px center;
+    }
+  }
+
+  &__points {
+    position: relative;
+    width: 908px;
+    height: 527px;
+    @include adpt($desm-r) {
+      order: 2;
+      width: 100%;
+    }
+  }
+
+  &__point {
+    position: absolute;
+    max-width: 152px;
+    font-size: 14px;
+    transition: color 0.25s, transform 0.5s;
+
+    &::before {
+      position: absolute;
+      content: "";
+      width: 32px;
+      height: 27px;
+      background: url("../images/map-icon.svg");
+      left: -39px;
+      top: 0;
+      transition: filter 0.5s, fill-opacity 0.5s;
+    }
+
+    &:hover {
+      transform: scale(1.05);
+      color: $white_text;
+
+      &::before {
+        filter: invert(99%) sepia(53%) saturate(2%) hue-rotate(207deg) brightness(400%) contrast(100%);
+        fill-opacity: 1;
+      }
+    }
+
+    &:nth-child(1) {
+      top: 205px;
+      left: 165px;
+    }
+
+    &:nth-child(2) {
+      top: 260px;
+      left: 120px;
+    }
+
+    &:nth-child(3) {
+      top: 325px;
+      left: 65px;
+    }
+
+    &:nth-child(4) {
+      top: 280px;
+      left: 365px;
+    }
+
+    &:nth-child(5) {
+      top: 350px;
+      left: 280px;
+    }
+
+    &:nth-child(6) {
+      top: 425px;
+      left: 460px;
+    }
+
+    &:nth-child(7) {
+      top: 220px;
+      left: 640px;
+    }
+
+    &:nth-child(3) {
+      &::before {
+        bottom: -30px;
+        top: unset;
+        left: -15px;
+      }
+    }
+
+    &:nth-child(1), &:nth-child(4), &:nth-child(5), &:nth-child(6), &:nth-child(7) {
+      &::before {
+        top: -10px;
+      }
+    }
+
+    @include adpt($desm-r) {
+      &:nth-child(1) {
+        top: 95px;
+        left: 325px;
+      }
+
+      &:nth-child(2) {
+        top: 150px;
+        left: 290px;
+      }
+
+      &:nth-child(3) {
+        top: 210px;
+        left: 230px;
+      }
+
+      &:nth-child(4) {
+        top: 165px;
+        left: 530px;
+      }
+
+      &:nth-child(5) {
+        top: 240px;
+        left: 440px;
+      }
+
+      &:nth-child(6) {
+        top: 320px;
+        left: 625px;
+      }
+
+      &:nth-child(7) {
+        top: 110px;
+        left: 800px;
+      }
+    }
+  }
+
+  &__info {
+    position: relative;
+    top: 50px;
+    @include adpt($desm-r) {
+      top: unset;
+      order: 1;
+    }
+  }
+
+  &__title {
+    font-size: 28px;
+    font-weight: 500;
+    text-transform: initial;
+    color: $white_text;
+    margin-bottom: 30px;
+  }
+
+
+  &__text {
+    font-size: 20px;
+    font-weight: 200;
+    max-width: 420px;
+    color: $white_text;
+  }
+
+  @include adpt($tab-r) {
+    overflow-x: auto;
+    overflow-y: hidden;
+    height: auto;
+  }
+}

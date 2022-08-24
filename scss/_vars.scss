@@ -1,0 +1,41 @@
+$accent: #010B4B;
+$default:#5B6276;
+$white: #fff;
+$white_text: #FDFDFD;
+$white_input: #F4F4F4;
+
+
+
+$big-r: 1380;
+$desm-r: 1280;
+$tab-r: 1024;
+$mtab-r: 992;
+$stab-r: 768;
+$bmob-r: 576;
+
+
+
+
+@mixin adpt($width) {
+  @media (max-width: #{$width}px) {
+    @content;
+  }
+}
+
+@mixin adptmob($width) {
+  @media (min-width: #{$width}px) {
+    @content;
+  }
+}
+
+@include adpt ($bmob-r) {
+
+}
+
+@function max($numbers...) {
+  @return m#{a}x(#{$numbers});
+}
+
+@function min($numbers...) {
+  @return m#{i}n(#{$numbers});
+}

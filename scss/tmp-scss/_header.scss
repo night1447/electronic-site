@@ -1,0 +1,219 @@
+.header {
+  flex-shrink: 0;
+  background-image: url('../images/bg.svg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  height: auto;
+  min-height: 440px;
+  aspect-ratio: 1920/625;
+  @include adpt($big-r) {
+    aspect-ratio: initial;
+  }
+
+  & .container {
+    height: 100%;
+  }
+
+  &__top {
+    padding: 20px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    @include adpt($tab-r) {
+      flex-direction: column-reverse;
+      align-items: flex-start;
+      padding-top: 55px;
+    }
+  }
+
+  &__contacts {
+    flex: 1;
+    flex-shrink: 0;
+    text-align: right;
+    max-width: 180px;
+    width: 100%;
+
+    @include adpt($tab-r) {
+      position: absolute;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 10px 30px;
+      top: 0;
+      left: 0;
+      max-width: 100%;
+      width: calc(100% + 30px);
+      text-align: left;
+      background-color: #00144A;
+    }
+  }
+
+  &__contacts-link {
+    display: block;
+  }
+
+  &__tel {
+
+    font-weight: 600;
+    background: linear-gradient(101.49deg, #A5A8F5 17.34%, #B8BAF5 53.55%, #9296F7 86.43%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-fill-color: transparent;
+
+    @include adpt($tab-r) {
+      color: rgba(241, 241, 241, 0.7);
+      font-size: 14px;
+      background: none;
+      -webkit-background-clip: initial;
+      -webkit-text-fill-color: initial;
+      background-clip: initial;
+      text-fill-color: initial;
+      font-weight: 200;
+    }
+  }
+
+  &__mail {
+    color: #F1F1F1;
+    font-weight: 200;
+
+    @include adpt($tab-r) {
+      color: rgba(241, 241, 241, 0.7);
+      font-size: 14px;
+      font-weight: 200;
+    }
+  }
+
+  &__left {
+    display: flex;
+    align-items: center;
+    flex: 1;
+    @include adpt($tab-r) {
+      width: 100%;
+      justify-content: space-between;
+    }
+    @include adpt($bmob-r) {
+      margin-bottom: 70px;
+    }
+  }
+
+  &__nav {
+    margin: 0 auto;
+    @include adpt($tab-r) {
+      margin: 0;
+    }
+  }
+
+  &__wrap {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+    padding-bottom: 50px;
+  }
+
+  &__bottom {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: $white_text;
+  }
+
+  &__text {
+    opacity: 0.77;
+    margin-bottom: 115px;
+
+    @include adpt($big-r) {
+      margin-bottom: 50px;
+    }
+    @include adpt($bmob-r) {
+      margin-bottom: 45px;
+    }
+  }
+
+  &__title {
+    font-size: 36px;
+    margin-bottom: 25px;
+    text-transform: uppercase;
+
+    @include adpt($big-r) {
+      font-size: 32px;
+    }
+    @include adpt($bmob-r) {
+      font-size: 20px;
+    }
+  }
+
+  &__subtitle {
+    font-size: 28px;
+
+    @include adpt($big-r) {
+      font-size: 26px;
+    }
+    @include adpt($bmob-r) {
+      font-size: 18px;
+    }
+  }
+
+  &__search {
+    display: flex;
+    position: relative;
+    width: 100%;
+    max-width: 852px;
+    padding: 14px 170px 14px 30px;
+    background-color: #FFFFFF;
+    border: 1px solid #F1F1F1;
+    border-radius: 30px;
+    @include adpt($bmob-r) {
+      padding: 0;
+      flex-direction: column;
+      background: none;
+      border: unset;
+    }
+  }
+
+  &__input {
+    width: 100%;
+    font-size: 16px;
+    color: $default;
+    font-weight: 300;
+    line-height: 22px;
+
+    &:focus {
+      outline: none;
+    }
+
+    @include adpt($bmob-r) {
+      padding: 17px 30px;
+      border-radius: 30px;
+      background: $white;
+      margin-bottom: 16px;
+    }
+  }
+
+  &__btn {
+    position: absolute;
+    right: -2px;
+    top: 50%;
+    transform: translateY(-50%);
+    @include adpt($bmob-r) {
+      position: relative;
+      width: 100%;
+      right: unset;
+      top: unset;
+      transform: unset;
+      z-index: 1;
+    }
+  }
+
+  &__logo {
+    @include adpt($tab-r) {
+      max-width: 85px;
+    }
+  }
+}

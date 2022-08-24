@@ -1,0 +1,46 @@
+.contacts {
+  position: relative;
+  margin-bottom: 60px;
+  &::before {
+    position: absolute;
+    content: "";
+    left: -23px;
+    top: -3px;
+    width: 17px;
+    height: 24px;
+    background: url("../images/location.svg") center center/cover no-repeat;
+  @include adpt($bmob-r){
+    width: 11px;
+    height: 16px;
+  }
+  }
+
+  &__address {
+    margin-bottom: 14px;
+    font-size: 14px;
+    color: #F1F1F1B2;
+    @include adpt($desm-r) {
+      font-size: 16px;
+    }
+    }
+
+  &__number {
+    display: block;
+    font-size: 16px;
+    font-weight: 600;
+    background: -webkit-linear-gradient(101.49deg, #A5A8F5 17.34%, #B8BAF5 53.55%, #9296F7 86.43%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 5px;
+  }
+
+  &__email {
+    display: block;
+    font-size: 16px;
+    color: #F1F1F1;
+  }
+
+  @include adpt($desm-r){
+   margin-left: 30px;
+  }
+}

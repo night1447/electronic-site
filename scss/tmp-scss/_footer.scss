@@ -1,0 +1,105 @@
+.footer {
+  position: relative;
+  background: #0C1431;
+
+  &::after {
+    position: absolute;
+    content: "";
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 48px;
+    background: #0A122D;
+  }
+
+  &__wrapper {
+    display: flex;
+    justify-content: space-between;
+    color: $white_text;
+    @include adpt($desm-r) {
+
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-evenly;
+    }
+    @include adpt($bmob-r) {
+      justify-content: flex-start;
+    }
+  }
+
+  &__blocks {
+    flex-basis: 60%;
+    display: flex;
+    font-size: 16px;
+    font-weight: 200;
+    column-gap: 56px;
+    @include adpt($desm-r) {
+      flex-direction: column;
+      row-gap: 56px;
+      flex-basis: fit-content;
+    }
+
+  }
+
+  &__logo {
+    margin-bottom: 42px;
+  }
+
+  &__title {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 16px;
+  }
+
+  &__link {
+    width: 100%;
+  }
+
+  &__item {
+    position: relative;
+    color: #F1F1F1B2;
+    transition: padding-left 0.25s;
+    &::before {
+      position: absolute;
+      content: "";
+      width: 0;
+      height: 2px;
+      left: 0;
+      bottom: 50%;
+      transform: translateY(-50%);
+      background: #A4A7E266;
+      transition: width 0.25s;
+    }
+
+    &:hover {
+      padding-left: 20px;
+      background: -webkit-linear-gradient(101.49deg, #A5A8F5 17.34%, #B8BAF5 53.55%, #9296F7 86.43%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+
+      &::before {
+        width: 16px;
+      }
+    }
+  }
+
+  &__menu, &__catalog {
+    width: 100%;
+    row-gap: 8px;
+    flex-wrap: wrap;
+    max-height: 300px;
+    @include adpt($desm-r) {
+      max-height: 100%;
+      flex-wrap: nowrap;
+    }
+  }
+
+  &__catalog {
+    column-gap: 46px;
+    @include adpt($desm-r) {
+      column-gap: 20px;
+    }
+  }
+}
+
+@import "contacts";
